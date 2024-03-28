@@ -59,6 +59,7 @@ const ClassificationComponent = () => {
                     setWarmingUpGen(true);
                 } catch (error) {
                     console.error('Error during form submission:', error);
+                    setWarmingUpGen(false);
                 }
                 try {
                     const response = await fetch('https://api-inference.huggingface.co/models/thomas628/my_awesome_model', {
@@ -75,6 +76,7 @@ const ClassificationComponent = () => {
                     setWarmingUpSen(true);
                 } catch (error) {
                     console.error('Error during form submission:', error);
+                    setWarmingUpGen(false);
                 }
             };
             

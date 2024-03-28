@@ -23,7 +23,7 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
             if (returnthing !== '') {
             try {
 
-                const response = await fetch('../api/classify', {
+                const response = await fetch('/api/genuinity', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

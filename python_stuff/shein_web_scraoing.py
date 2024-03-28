@@ -7,14 +7,14 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 import time
 
-def SHEIN():
+def SHEIN(link):
     review_list =[]
     url2 = 'https://ca.shein.com/SHEIN-Frenchy-Ditsy-Floral-Print-Knot-Front-Split-Thigh-Dress-p-16375006.html?mallCode=1&imgRatio=3-4'
     chrome_options = webdriver.ChromeOptions()
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
     chrome_options.add_argument(f'user-agent={user_agent}')
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get(url2)
+    driver.get(link)
     print('started')
 
     # Close the pop up advertisement and puzzle thing

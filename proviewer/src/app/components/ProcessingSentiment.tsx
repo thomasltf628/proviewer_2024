@@ -22,10 +22,10 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
         const fetchData = async () => {
             if (returnthing !== ''){
             try {
-                const response = await fetch('https://api-inference.huggingface.co/models/thomas628/my_awesome_model', {
+                const response = await fetch('/api/sentiment', {
                     method: 'POST',
                     headers: {
-                        "Authorization": "Bearer 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"
+                        'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({ "inputs": returnthing })
                 });

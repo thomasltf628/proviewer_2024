@@ -17,13 +17,37 @@ const ScrappingForReviews: React.FC<ScrappingForReviewsProps> = ({ submittedValu
     
     const [submitStatus, setSubmitStatus] = useState('');
 
+    const getBrandFromUrl = (url: string): string | null => {
+        const brands = ["puma", "etsy", "shein"];
+        try {
+            const urlObject = new URL(url);
+            const domain = urlObject.hostname;
+    
+            for (const brand of brands) {
+                if (domain.toLowerCase().includes(brand)) {
+                    return brand;
+                }
+            }
+        } catch (error) {
+            console.error('Invalid URL:', error);
+        }
+    
+        return null; // Return null if no brand is found or if the URL is invalid
+    };
+    
+
     useEffect(() => {
         const fetchData = async () => {
             if (submittedValue !== '') {
+                
             try {
-
-                const response = await fetch('http://127.0.0.1:5000/scrap_puma', {
-                    method: 'GET'
+                const website = getBrandFromUrl(submittedValue);
+                const response = await fetch(`http://127.0.0.1:5000/scrap_${website}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ "inputs": submittedValue })
                 });
 
                 if (!response.ok) {

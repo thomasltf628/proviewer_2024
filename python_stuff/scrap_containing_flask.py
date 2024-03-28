@@ -20,22 +20,25 @@ CORS(app)
 def index():
     return ("Hello")
 
-@app.route("/scrap_etsy", methods=["GET"])
+@app.route("/scrap_etsy", methods=["POST"])
 def scrapping_etsy():
-    #data = request.json
-    result = Etsy()
+    data = request.json
+    link = data.get('inputs')
+    result = Etsy(link)
     return jsonify(result)
 
-@app.route("/scrap_puma", methods=["GET"])
+@app.route("/scrap_puma", methods=["POST"])
 def scrapping_puma():
-    #data = request.json
-    result = Puma()
+    data = request.json
+    link = data.get('inputs')
+    result = Puma(link)
     return jsonify(result)
 
-@app.route("/scrap_shein", methods=["GET"])
+@app.route("/scrap_shein", methods=["POST"])
 def scrapping_shein():
-    #data = request.json
-    result = SHEIN()
+    data = request.json
+    link = data.get('inputs')
+    result = SHEIN(link)
     return jsonify(result)
 
 

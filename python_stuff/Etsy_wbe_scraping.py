@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Web scraping Etsy"""
+#https://www.etsy.com/listing/1666024421/womens-linen-vest-linen-vest-cropped?ref=listing_page_ad_row-3&sts=1&plkey=9871ca7799275aa94fdf1eda173f6e54ee022fc1%3A1666024421&listing_id=1666024421&listing_slug=womens-linen-vest-linen-vest-cropped
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -7,7 +8,7 @@ import csv
 import pandas as pd
 from datetime import datetime
 
-def Etsy():
+def Etsy(link):
     no_of_reviews = 0
     review_list =[]
     website = "ETSY"
@@ -19,7 +20,7 @@ def Etsy():
     PATH = "C:/Program Files (x86)/chromedriver.exe"
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)
-    driver.get(url)
+    driver.get(link)
     print('gotten')
 
     review_to_scrap = 5

@@ -23,7 +23,7 @@ const InputPreview = () => {
             const response = await fetch('https://api-inference.huggingface.co/models/thomas628/my_finefuned_model', {
                 method: 'POST',
                 headers: {
-                    "Authorization": "Bearer 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"
+                    "Authorization": "Bearer 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"
                 },
                 body: JSON.stringify({ "inputs": inputValue })
             });

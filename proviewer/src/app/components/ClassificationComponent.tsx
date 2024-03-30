@@ -88,7 +88,7 @@ const ClassificationComponent = () => {
     return (
         <div>
             <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} />
-            <ProcessingGenuinity submittedValue={submittedValue} returnthing= {returnthing} />
+
             <ProcessingSentiment submittedValue={submittedValue} returnthing={returnthing}/>
             <ScrappingForReviews submittedValue={submittedValue} returnthing={returnthing} updateReturning={updateReturning}/>
             <button onClick={handleClick}>Warming up</button>
@@ -98,3 +98,5 @@ const ClassificationComponent = () => {
 };
 
 export default ClassificationComponent;
+
+/*            <ProcessingGenuinity submittedValue={submittedValue} returnthing= {returnthing} /> */

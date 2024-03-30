@@ -63,7 +63,7 @@ def Puma(link):
 
     #Generate all reviews in the review box using the button
     print('started')
-    continue_to_click = 3
+    continue_to_click = 1
     try:
         while continue_to_click < 0:
             more_rev.click()
@@ -76,7 +76,7 @@ def Puma(link):
     reviews = review_box.find_elements(By.CLASS_NAME, 'break-words')
     for rev in reviews:
         review_list.append(rev.text)
-    return review_list[1]
+    return review_list[0]
 
 # write to csv file
 

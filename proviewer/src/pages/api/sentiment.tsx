@@ -1,5 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+const sleep = (ms: number): Promise<void> => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+};
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         try {
@@ -17,6 +21,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
             const result = await response.json();
             res.status(200).json(result);
+
+            await sleep(500);
         } 
         catch (error) {
             if (error instanceof Error) {

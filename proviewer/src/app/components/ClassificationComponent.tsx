@@ -42,6 +42,23 @@ const ClassificationComponent = () => {
         setSubmittedValue(inputValue);
     };
 
+    return (
+        <div>
+            <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} />
+            <ScrappingForReviews submittedValue={submittedValue} returnthing={returnthing} updateReturning={updateReturning}/>
+            <ProcessingGenuinity submittedValue={submittedValue} returnthing={returnthing}/>
+            <ProcessingSentiment submittedValue={submittedValue} returnthing={returnthing}/> 
+        </div>
+        
+    );
+};
+
+export default ClassificationComponent;
+
+// warming up button for api call on serverless api
+//             
+/*
+
     const fetchData = async () => {
                 
         try {
@@ -59,6 +76,7 @@ const ClassificationComponent = () => {
                     setWarmingUpGen(true);
                 } catch (error) {
                     console.error('Error during form submission:', error);
+                    setWarmingUpGen(false);
                 }
                 try {
                     const response = await fetch('https://api-inference.huggingface.co/models/thomas628/my_awesome_model', {
@@ -75,6 +93,7 @@ const ClassificationComponent = () => {
                     setWarmingUpSen(true);
                 } catch (error) {
                     console.error('Error during form submission:', error);
+                    setWarmingUpGen(false);
                 }
             };
             
@@ -83,10 +102,14 @@ const ClassificationComponent = () => {
         console.log(warmingUpGen, warmingUpSen)
         };
 
+<<<<<<< HEAD
+<button onClick={handleClick}>Warming up</button>
+*/
+=======
     return (
         <div>
             <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} />
-            <ProcessingGenuinity submittedValue={submittedValue} returnthing= {returnthing} />
+
             <ProcessingSentiment submittedValue={submittedValue} returnthing={returnthing}/>
             <ScrappingForReviews submittedValue={submittedValue} returnthing={returnthing} updateReturning={updateReturning}/>
             <button onClick={handleClick}>Warming up</button>
@@ -96,3 +119,6 @@ const ClassificationComponent = () => {
 };
 
 export default ClassificationComponent;
+
+/*            <ProcessingGenuinity submittedValue={submittedValue} returnthing= {returnthing} /> */
+>>>>>>> 70c528ee9f667a29f1084230cfc47257a3a08e6f

@@ -12,6 +12,11 @@ from shein_web_scraoing import SHEIN
 from flask import Flask, jsonify
 from flask import request, render_template
 from flask_cors import CORS
+import torch
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+import torch.nn.functional as F
+from genuinity_model import getting_label
+from sentiment_model import getting_label_sentiment
 
 app = Flask(__name__)
 CORS(app)
@@ -20,23 +25,41 @@ CORS(app)
 def index():
     return ("Hello")
 
-@app.route("/scrap_etsy", methods=["GET"])
+@app.route("/scrap_etsy", methods=["POST"])
 def scrapping_etsy():
-    #data = request.json
-    result = Etsy()
+    data = request.json
+    link = data.get('inputs')
+    result = Etsy(link)
     return jsonify(result)
 
-@app.route("/scrap_puma", methods=["GET"])
+@app.route("/scrap_puma", methods=["POST"])
 def scrapping_puma():
-    #data = request.json
-    result = Puma()
+    data = request.json
+    link = data.get('inputs')
+    result = Puma(link)
     return jsonify(result)
 
-@app.route("/scrap_shein", methods=["GET"])
+@app.route("/scrap_shein", methods=["POST"])
 def scrapping_shein():
-    #data = request.json
-    result = SHEIN()
+    data = request.json
+    link = data.get('inputs')
+    result = SHEIN(link)
     return jsonify(result)
+
+@app.route("/call_genuinity", methods=["POST"])
+def calling_genuinity_model():
+    data = request.json
+    sentence = data.get('text')
+    result  = getting_label(sentence)
+    return jsonify(result)
+
+@app.route("/call_sentiment", methods=["POST"])
+def calling_sentiment_model():
+    data = request.json
+    sentence = data.get('text')
+    result  = getting_label_sentiment(sentence)
+    return jsonify(result)
+
 
 
 

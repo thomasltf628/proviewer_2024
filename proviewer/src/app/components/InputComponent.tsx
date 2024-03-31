@@ -11,7 +11,7 @@ interface InputComponentProps {
 const InputComponent: React.FC<InputComponentProps> = ({ inputValue, onInputChange, onFormSubmit }) => {
     return (
         <form onSubmit={onFormSubmit}>
-            <label htmlFor="inputField">Enter Text!!!:</label>
+            <label htmlFor="inputField">The product link:</label>
             <input 
                 type="text" 
                 id="inputField" 

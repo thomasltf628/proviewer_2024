@@ -1,7 +1,8 @@
 
 """Scraping the puma website for reviews"""
-
+#https://ca.puma.com/ca/en/pd/cali-wedge-womens-sneakers/373438?swatch=01&referrer-category=womens-shop-all-womens
 from selenium import webdriver
+
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 from selenium.webdriver.support import expected_conditions as EC
@@ -11,16 +12,14 @@ import csv
 import pandas as pd
 
 
-def Puma():
+def Puma(link):
     website = "puma"
     review_list =[]
 
-    url = 'https://ca.puma.com/ca/en/pd/suede-classic-xxi-sneakers/374915?swatch=02&referrer-category=womens-shop-all-womens'
 
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)
-
-    driver.get(url)
+    driver.get(link)
 
     # click the button that ask for location
     try:
@@ -64,7 +63,7 @@ def Puma():
 
     #Generate all reviews in the review box using the button
     print('started')
-    continue_to_click = 3
+    continue_to_click = 1
     try:
         while continue_to_click < 0:
             more_rev.click()
@@ -77,7 +76,11 @@ def Puma():
     reviews = review_box.find_elements(By.CLASS_NAME, 'break-words')
     for rev in reviews:
         review_list.append(rev.text)
-    return review_list[2]
+<<<<<<< HEAD
+    return review_list
+=======
+    return review_list[0]
+>>>>>>> 70c528ee9f667a29f1084230cfc47257a3a08e6f
 
 # write to csv file
 

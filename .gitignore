@@ -1,0 +1,40 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+proviewer/node_modules
+proviewer/.pnp
+proviewer/.pnp.js
+proviewer/.yarn/install-state.gz
+
+# testing
+proviewer/coverage
+
+# next.js
+proviewer/.next/
+proviewer/out/
+
+# production
+proviewer/build
+
+# misc
+proviewer/.DS_Store
+proviewer/*.pem
+
+# debug
+proviewer/npm-debug.log*
+proviewer/yarn-debug.log*
+proviewer/yarn-error.log*
+
+# local env files
+proviewer/.env*.local
+
+# vercel
+proviewer/.vercel
+
+# typescript
+proviewer/*.tsbuildinfo
+proviewer/next-env.d.ts
+
+#the model
+python_stuff/my_awesome_model
+python_stuff/my_finefuned_model

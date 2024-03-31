@@ -2,8 +2,8 @@
 
 import React, { useState,useEffect, ChangeEvent, FormEvent } from 'react';
 import InputComponent from './InputComponent';
-import ProcessingGenuinity from './ProcessingGenuinity';
-import ProcessingSentiment from './ProcessingSentiment';
+import ProcessingGenuinity from './ProcessingGenuinityAndSentiment';
+import ProcessingSentiment from './nouse/ProcessingSentiment';
 import ScrappingForReviews from "./ScrappingForReviews";
 
 interface InputComponentProps {
@@ -25,13 +25,15 @@ type ApiResponse = LabelScore[][];
 const ClassificationComponent = () => {
     const [inputValue, setInputValue] = useState('');
     const [submittedValue, setSubmittedValue] = useState('');
-    const [submitting, setSubmitting] = useState(false);
     const [returnthing, setReturnthing] = useState('');
     const updateReturning = (newValue: string) => {
         setReturnthing(newValue);
-    };
-    const [warmingUpGen, setWarmingUpGen]= useState(false);
-    const [warmingUpSen, setWarmingUpSen]= useState(false);        
+    };  
+    const [gentimentClassificationResult, setGentimentClassificationResult] = useState<string[]>([]);
+    const [sentimentClassificationResult, setSentimentClassificationResult] = useState<string[]>([]);
+    const updateGentimentClassificationResult = (newValue: string[]) => {
+        setGentimentClassificationResult(newValue);
+    };  
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);    
@@ -47,7 +49,7 @@ const ClassificationComponent = () => {
             <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} />
             <ScrappingForReviews submittedValue={submittedValue} returnthing={returnthing} updateReturning={updateReturning}/>
             <ProcessingGenuinity submittedValue={submittedValue} returnthing={returnthing}/>
-            <ProcessingSentiment submittedValue={submittedValue} returnthing={returnthing}/> 
+
         </div>
         
     );
@@ -58,6 +60,9 @@ export default ClassificationComponent;
 // warming up button for api call on serverless api
 //             
 /*
+
+    const [warmingUpGen, setWarmingUpGen]= useState(false);
+    const [warmingUpSen, setWarmingUpSen]= useState(false);      
 
     const fetchData = async () => {
                 
@@ -102,9 +107,12 @@ export default ClassificationComponent;
         console.log(warmingUpGen, warmingUpSen)
         };
 
-<<<<<<< HEAD
+
 
 <button onClick={handleClick}>Warming up</button>
+
+
+<ProcessingSentiment submittedValue={submittedValue} returnthing={returnthing}/> 
 */
 
 

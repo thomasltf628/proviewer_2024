@@ -24,14 +24,11 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
 
 
     useEffect(() => {
-        const fetchData = async () => {
+        const fetchSenData = async () => {
             if (returnthing !== ''){   //Prevent from showing "Submission fail" before anybody gives a fuck
-
-
             for (const sentence of returnthing) {
                 try {
                     const response = await fetch('http://127.0.0.1:5000/call_sentiment', {
-
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -39,8 +36,6 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
                         body: JSON.stringify({ "text": sentence })
 
                     });
-
-
                     if (!response.ok) {
                         throw new Error(`Error: ${response.status}`);
                     }
@@ -50,30 +45,22 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
                     if (result.length > 0 && result[0].length > 0) {
                         const highestScoreLabel = result[0].reduce((highest, current) => {
                             return (current.score > highest.score) ? current : highest;
-                        }).label;
-                    
-
+                        }).label;                
                         console.log(sentence);
                         console.log(result);
                         addSentimentClassificationResult(highestScoreLabel);
-
-
                     } else {
                         console.log("No data available");
-                    }
-                    
+                    }                    
                     setSubmitStatus('Submitted Successfully!');
                 } catch (error) {
                     console.error('Error during form submission:', error);
                     setSubmitStatus('Submission failed.');
                 }
-
             }
+        }};
+        fetchSenData();
 
-
-        }
-        };
-        fetchData();
 
     }, [returnthing]);
 

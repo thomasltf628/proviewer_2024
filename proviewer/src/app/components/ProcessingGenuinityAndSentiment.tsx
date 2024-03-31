@@ -115,20 +115,20 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
             {gensubmitStatus && <p>{gensubmitStatus}</p>}
             {sensubmitStatus && <p>{sensubmitStatus}</p>}
             
-            <table style={{width: '100%', height: '400px', borderWidth: '2px'}}>
+            <table style={{ borderCollapse: "collapse" }}>
                 <thead>
                     <tr>
-                        <th>Sentence</th>
-                        <th>Gentiment Classification</th>
-                        <th>Sentiment Classification</th>
+                        <th style={{ borderCollapse: "collapse" }}>Sentence</th>
+                        <th style={{ borderCollapse: "collapse" }}>Gentiment Classification</th>
+                        <th style={{ borderCollapse: "collapse" }}>Sentiment Classification</th>
                     </tr>
                 </thead>
                 <tbody>
                     {gentimentClassificationResult.map((result, index) => (
                         <tr key={index}>
-                            <td>{returnthing[index]}</td>
-                            <td>{result}</td>
-                            <td>{sentimentClassificationResult[index]}</td>
+                            <td style={{ border: "1px solid black" }}>{returnthing[index]}</td>
+                            <td style={{ border: "1px solid black" }}>{result}</td>
+                            <td style={{ border: "1px solid black" }}>{sentimentClassificationResult[index]}</td>
                         </tr>
                     ))}
                 </tbody>

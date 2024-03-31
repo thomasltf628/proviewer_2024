@@ -73,14 +73,6 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
 
     return (
         <div>
-            <table style={{width: '100%', height: '400px', borderWidth: '2px'}}>
-            <thead>
-                <th>Sen</th>
-            </thead>
-            <tbody>
-                
-            </tbody>
-            </table>
             {submitStatus && <p>{submitStatus}</p>}
             {sentimentClassificationResult && (submitStatus == 'Submitted Successfully!') && <p>{sentimentClassificationResult.map((result, index) => (<p key={index}>{result}</p> ))}</p>}
             

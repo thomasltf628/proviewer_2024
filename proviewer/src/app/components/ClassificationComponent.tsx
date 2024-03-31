@@ -102,23 +102,7 @@ export default ClassificationComponent;
         console.log(warmingUpGen, warmingUpSen)
         };
 
-<<<<<<< HEAD
+
 <button onClick={handleClick}>Warming up</button>
 */
-=======
-    return (
-        <div>
-            <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} />
 
-            <ProcessingSentiment submittedValue={submittedValue} returnthing={returnthing}/>
-            <ScrappingForReviews submittedValue={submittedValue} returnthing={returnthing} updateReturning={updateReturning}/>
-            <button onClick={handleClick}>Warming up</button>
-        </div>
-        
-    );
-};
-
-export default ClassificationComponent;
-
-/*            <ProcessingGenuinity submittedValue={submittedValue} returnthing= {returnthing} /> */
->>>>>>> 70c528ee9f667a29f1084230cfc47257a3a08e6f

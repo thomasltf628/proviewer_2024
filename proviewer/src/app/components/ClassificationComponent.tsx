@@ -102,7 +102,9 @@ export default ClassificationComponent;
         console.log(warmingUpGen, warmingUpSen)
         };
 
+<<<<<<< HEAD
 
 <button onClick={handleClick}>Warming up</button>
 */
+
 

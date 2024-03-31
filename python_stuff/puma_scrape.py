@@ -76,7 +76,9 @@ def Puma(link):
     reviews = review_box.find_elements(By.CLASS_NAME, 'break-words')
     for rev in reviews:
         review_list.append(rev.text)
+
     return review_list
+
 
 
 # write to csv file

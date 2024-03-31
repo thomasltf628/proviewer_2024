@@ -7,7 +7,7 @@ const sleep = (ms: number): Promise<void> => {
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         try {
-            const response = await fetch('https://api-inference.huggingface.co/models/thomas628/my_awesome_model', {
+            const response = await fetch('https://api-inference.huggingface.co/models/thomas628/my_finefuned_model', {
                 method: 'POST',
                 headers: {
                     "Authorization": `Bearer ${process.env.SECRET_API_KEY}`

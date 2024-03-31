@@ -27,6 +27,7 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
         const fetchData = async () => {
             if (returnthing !== ''){   //Prevent from showing "Submission fail" before anybody gives a fuck
 
+
             for (const sentence of returnthing) {
                 try {
                     const response = await fetch('http://127.0.0.1:5000/call_sentiment', {
@@ -39,6 +40,7 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
 
                     });
 
+
                     if (!response.ok) {
                         throw new Error(`Error: ${response.status}`);
                     }
@@ -50,9 +52,11 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
                             return (current.score > highest.score) ? current : highest;
                         }).label;
                     
+
                         console.log(sentence);
                         console.log(result);
                         addSentimentClassificationResult(highestScoreLabel);
+
 
                     } else {
                         console.log("No data available");
@@ -63,7 +67,9 @@ const ProcessingSentiment: React.FC<ProcessingSentimentProps> = ({returnthing}) 
                     console.error('Error during form submission:', error);
                     setSubmitStatus('Submission failed.');
                 }
+
             }
+
 
         }
         };

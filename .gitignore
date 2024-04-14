@@ -38,3 +38,4 @@ proviewer/next-env.d.ts
 #the model
 python_stuff/my_awesome_model
 python_stuff/my_finefuned_model
+python_stuff/my_genuinityClassification_model

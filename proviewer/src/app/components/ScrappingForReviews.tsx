@@ -18,7 +18,7 @@ const ScrappingForReviews: React.FC<ScrappingForReviewsProps> = ({ submittedValu
     const [submitStatus, setSubmitStatus] = useState('');
 
     const getBrandFromUrl = (url: string): string | null => {
-        const brands = ["puma", "etsy", "shein"];
+        const brands = ["puma", "etsy", "shein", "adidas", "roots"];
         try {
             const urlObject = new URL(url);
             const domain = urlObject.hostname;

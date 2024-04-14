@@ -23,7 +23,7 @@ def Etsy(link):
     driver.get(link)
     print('gotten')
 
-    review_to_scrap = 2
+    review_to_scrap = 8
 
     time.sleep(2)
     print('started')

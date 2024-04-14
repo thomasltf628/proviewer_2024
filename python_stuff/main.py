@@ -6,9 +6,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
+
 from Etsy_wbe_scraping import Etsy
 from puma_scrape import Puma
 from shein_web_scraoing import SHEIN
+from adidas_scraping import Adidas
+from roots_scraping import Roots
+
 from flask import Flask, jsonify
 from flask import request, render_template
 from flask_cors import CORS
@@ -45,6 +49,25 @@ def scrapping_shein():
     link = data.get('inputs')
     result = SHEIN(link)
     return jsonify(result)
+
+@app.route("/scrap_adidas", methods=["POST"])
+def scrapping_adidas():
+    data = request.json
+    link = data.get('inputs')
+    result = Adidas(link)
+    return jsonify(result)
+
+@app.route("/scrap_roots", methods=["POST"])
+def scrapping_roots():
+    data = request.json
+    link = data.get('inputs')
+    result = Roots(link)
+    return jsonify(result)
+
+###################################################
+
+#####################################################
+
 
 @app.route("/call_genuinity", methods=["POST"])
 def calling_genuinity_model():

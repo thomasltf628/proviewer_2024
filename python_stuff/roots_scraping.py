@@ -50,7 +50,7 @@ def Roots(link):
 
     no_of_reviews = 0
 
-    while no_of_reviews < 25:
+    while no_of_reviews < 15:
         reviews = driver.find_elements(By.CSS_SELECTOR, 'li.bv-content-top-review')
         no_of_reviews += len(reviews)
         for review in reviews:

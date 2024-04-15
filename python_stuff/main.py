@@ -25,7 +25,7 @@ from sentiment_model import getting_label_sentiment
 from waitress import serve
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=['http://18.191.233.44'])
 
 @app.route("/")
 def index():

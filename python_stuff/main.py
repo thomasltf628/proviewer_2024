@@ -32,7 +32,7 @@ app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route("127.0.0.1/")
+@app.route("/")
 def index():
     print('hi')
     return ("Hello")

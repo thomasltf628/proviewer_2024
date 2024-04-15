@@ -9,7 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 import csv
 import time
 
-link = 'https://www.roots.com/us/en/organic-original-sweatpant-38090375.html?dwvar_38090375_color=001'
+
 
 def Roots(link):
     url = link
@@ -71,9 +71,6 @@ def Roots(link):
     print(review_list)
 
     return review_list
-
-if __name__ == "__main__":
-    Roots(link)
 
     
 

@@ -29,6 +29,7 @@ CORS(app)
 
 @app.route("/")
 def index():
+    print('hi')
     return ("Hello")
 
 @app.route("/scrap_etsy", methods=["POST"])

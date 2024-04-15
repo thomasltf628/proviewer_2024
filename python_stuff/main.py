@@ -16,7 +16,7 @@ from sport_chek_scraping import Sportchek
 
 from flask import Flask, jsonify
 from flask import request, render_template
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import torch.nn.functional as F
@@ -25,7 +25,8 @@ from sentiment_model import getting_label_sentiment
 from waitress import serve
 
 app = Flask(__name__)
-CORS(app, origins=['http://18.191.233.44'])
+CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/")
 def index():
@@ -61,6 +62,7 @@ def scrapping_adidas():
     return jsonify(result)
 
 @app.route("/scrap_roots", methods=["POST"])
+@cross_origin()
 def scrapping_roots():
     data = request.json
     link = data.get('inputs')

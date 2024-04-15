@@ -103,4 +103,4 @@ def calling_sentiment_model():
     app.run()"""
 
 if __name__ == "__main__":
-    serve(app, host="0.0.0.0", port=5000)
+    serve(app, port=5000)

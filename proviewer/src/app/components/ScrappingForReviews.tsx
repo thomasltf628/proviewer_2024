@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useEffect} from 'react';
 
 interface LabelScore {
     label: string;
@@ -22,6 +22,7 @@ const ScrappingForReviews: React.FC<ScrappingForReviewsProps> = ({ submittedValu
         try {
             const urlObject = new URL(url);
             const domain = urlObject.hostname;
+            console.log (domain)
     
             for (const brand of brands) {
                 if (domain.toLowerCase().includes(brand)) {

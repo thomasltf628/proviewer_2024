@@ -5,7 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import csv
-import pandas as pd
 from datetime import datetime
 
 def Etsy(link):

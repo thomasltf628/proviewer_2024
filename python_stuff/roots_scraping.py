@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """roots scraping"""
+#https://www.roots.com/us/en/organic-original-sweatpant-38090375.html?dwvar_38090375_color=001
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *

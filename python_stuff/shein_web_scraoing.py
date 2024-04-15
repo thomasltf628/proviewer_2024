@@ -62,7 +62,7 @@ def SHEIN(link):
     time.sleep(5)
     page_nav = driver.find_element(By.CLASS_NAME, 'sui-pagination.sui-pagination__right')
     page_num = 2
-    while page_num <= 5:
+    while page_num <= 3:
         get_reviews()
         try:
             next = page_nav.find_element(By.XPATH, f"//span[text()='{page_num}']")

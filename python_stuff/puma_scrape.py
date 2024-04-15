@@ -11,10 +11,7 @@ import time
 import csv
 
 def Puma(link):
-    website = "puma"
     review_list =[]
-
-
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)
     driver.get(link)

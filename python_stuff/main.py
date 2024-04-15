@@ -26,6 +26,7 @@ from waitress import serve
 import logging
 
 logging.getLogger('flask_cors').level = logging.DEBUG
+logging.basicConfig(level=logging.DEBUG)
 
 app = Flask(__name__)
 CORS(app)

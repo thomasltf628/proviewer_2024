@@ -4,6 +4,7 @@ import torch.nn.functional as F
 
 def getting_label(sentence):
     model_directory = r'C:\Users\Administrator\proviewer_2024\python_stuff\my_finefuned_model'
+    #model_directory = r'C:\Users\super\OneDrive\桌面\adcademic\Capstone\Proviewer Full\python_stuff\my_finefuned_model'
     model = AutoModelForSequenceClassification.from_pretrained(model_directory)
     tokenizer = AutoTokenizer.from_pretrained(model_directory)
     inputs = tokenizer(f"{sentence}", return_tensors="pt")

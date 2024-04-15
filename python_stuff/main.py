@@ -21,6 +21,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import torch.nn.functional as F
 from genuinity_model import getting_label
 from sentiment_model import getting_label_sentiment
+from waitress import serve
 
 app = Flask(__name__)
 CORS(app)
@@ -90,5 +91,4 @@ def calling_sentiment_model():
     app.run()"""
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
+    serve(app, host="0.0.0.0", port=5000)

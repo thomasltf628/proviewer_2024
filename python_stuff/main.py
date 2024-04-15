@@ -23,6 +23,9 @@ import torch.nn.functional as F
 from genuinity_model import getting_label
 from sentiment_model import getting_label_sentiment
 from waitress import serve
+import logging
+
+logging.getLogger('flask_cors').level = logging.DEBUG
 
 app = Flask(__name__)
 CORS(app)

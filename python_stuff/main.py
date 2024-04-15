@@ -12,6 +12,7 @@ from puma_scrape import Puma
 from shein_web_scraoing import SHEIN
 from adidas_scraping import Adidas
 from roots_scraping import Roots
+from sport_chek_scraping import Sportchek
 
 from flask import Flask, jsonify
 from flask import request, render_template
@@ -65,9 +66,14 @@ def scrapping_roots():
     result = Roots(link)
     return jsonify(result)
 
-###################################################
 
-#####################################################
+@app.route("/scrap_sportchek", methods=["POST"])
+def scrapping_sportchek():
+    data = request.json
+    link = data.get('inputs')
+    result = Sportchek(link)
+    return jsonify(result)
+
 
 
 @app.route("/call_genuinity", methods=["POST"])

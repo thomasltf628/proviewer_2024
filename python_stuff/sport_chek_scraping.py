@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """SPort check scraping"""
+#link = "https://www.sportchek.ca/en/pdp/columbia-women-s-arcadia-ii-hooded-rain-jacket-waterproof-breathable-packable-shell-12545911f.html?loc=plp&&colorCode=COLOUR_BLACK"
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,7 +11,7 @@ import csv
 import time
 
 def Sportchek(link):
-    link = "https://www.sportchek.ca/en/pdp/columbia-women-s-arcadia-ii-hooded-rain-jacket-waterproof-breathable-packable-shell-12545911f.html?loc=plp&&colorCode=COLOUR_BLACK"
+    
     """driver = webdriver.Firefox()"""
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)

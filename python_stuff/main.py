@@ -32,7 +32,7 @@ app = Flask(__name__)
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
-@app.route("/api", methods=["GET"])
+@app.route("/", methods=["GET"])
 def index():
     print('hi')
     return ("Hello")

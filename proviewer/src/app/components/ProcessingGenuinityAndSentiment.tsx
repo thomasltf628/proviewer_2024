@@ -1,5 +1,5 @@
 "use client";
-
+const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 
 interface LabelScore {
@@ -32,7 +32,7 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
             {
                 try {
 
-                    const response = await fetch('http://127.0.0.1:5000/call_genuinity', {
+                    const response = await fetch(`${apiUrl}/call_genuinity`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
             if (returnthing !== ''){   //Prevent from showing "Submission fail" before anybody gives a fuck
             for (const sentence of returnthing) {
                 try {
-                    const response = await fetch('http://127.0.0.1:5000/call_sentiment', {
+                    const response = await fetch(`${apiUrl}/call_sentiment`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

@@ -5,6 +5,7 @@ import InputComponent from './InputComponent';
 import ProcessingGenuinity from './ProcessingGenuinityAndSentiment';
 import ProcessingSentiment from './nouse/ProcessingSentiment';
 import ScrappingForReviews from "./ScrappingForReviews";
+const apiUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
 interface InputComponentProps {
     inputValue: string;

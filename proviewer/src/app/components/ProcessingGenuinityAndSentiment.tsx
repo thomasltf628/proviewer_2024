@@ -112,7 +112,7 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
 
     return (
         <div>
-            {gensubmitStatus && <p>Geninity :{gensubmitStatus}</p>}
+            {gensubmitStatus && <p>Genuinity :{gensubmitStatus}</p>}
             <br></br>
             {sensubmitStatus && <p>Sentiment :{sensubmitStatus}</p>}
             <br></br>
@@ -120,7 +120,7 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
                 <thead>
                     <tr>
                         <th style={{ borderCollapse: "collapse" }}>Sentence</th>
-                        <th style={{ borderCollapse: "collapse" }}>Gentiment Classification</th>
+                        <th style={{ borderCollapse: "collapse" }}>Genuinity Classification</th>
                         <th style={{ borderCollapse: "collapse" }}>Sentiment Classification</th>
                     </tr>
                 </thead>

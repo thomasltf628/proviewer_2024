@@ -44,7 +44,7 @@ def scrapping_etsy():
     result = Etsy(link)
     return jsonify(result)
 
-@app.route("/scrap_puma", methods=["POST"])
+@app.route("/api/scrap_puma", methods=["POST"])
 def scrapping_puma():
     data = request.json
     link = data.get('inputs')

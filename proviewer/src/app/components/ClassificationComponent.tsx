@@ -53,8 +53,9 @@ const ClassificationComponent = () => {
     return (
         <div>
             <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} setPresetInput ={handleSetPresetInput}/>
-
+            <br></br>
             <ScrappingForReviews submittedValue={submittedValue} returnthing={returnthing} updateReturning={updateReturning}/>
+            <br></br>
             <ProcessingGenuinity submittedValue={submittedValue} returnthing={returnthing}/>
 
         </div>

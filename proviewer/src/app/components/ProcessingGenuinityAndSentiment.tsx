@@ -113,8 +113,9 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
     return (
         <div>
             {gensubmitStatus && <p>Geninity :{gensubmitStatus}</p>}
+            <br></br>
             {sensubmitStatus && <p>Sentiment :{sensubmitStatus}</p>}
-            
+            <br></br>
             <table style={{ borderCollapse: "collapse" }}>
                 <thead>
                     <tr>

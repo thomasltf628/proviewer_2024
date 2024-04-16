@@ -16,7 +16,9 @@ const InputComponent: React.FC<InputComponentProps> = ({ inputValue, onInputChan
         <div>
         <form onSubmit={onFormSubmit}>
             <p>Input the link of the product from any of the following websites:</p>
+            <br></br>
             <p>Adidas | ETSY | Puma | Roots | Shein | Sportchek</p> 
+            <br></br>
             <label htmlFor="inputField">The product link:</label>
             <input 
                 type="text" 
@@ -26,6 +28,7 @@ const InputComponent: React.FC<InputComponentProps> = ({ inputValue, onInputChan
             />
             <button type="submit">Submit</button>
         </form>
+        <br></br>
         <div>
                 <button type="button" onClick={() => setPresetInput('https://www.adidas.ca/en/gazelle-shoes/IG6212.html')}>Adidas Link</button>
                 <button type="button" onClick={() => setPresetInput('https://www.etsy.com/listing/1666024421/womens-linen-vest-linen-vest-cropped?ref=listing_page_ad_row-3&sts=1&plkey=9871ca7799275aa94fdf1eda173f6e54ee022fc1%3A1666024421&listing_id=1666024421&listing_slug=womens-linen-vest-linen-vest-cropped')}>ETSY Link</button>

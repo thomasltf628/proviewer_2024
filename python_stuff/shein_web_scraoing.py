@@ -14,6 +14,7 @@ def SHEIN(link):
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
     chrome_options.add_argument(f'user-agent={user_agent}')
     driver = webdriver.Chrome(options=chrome_options)
+    driver.maximize_window()
     driver.get(link)
     print('started')
 

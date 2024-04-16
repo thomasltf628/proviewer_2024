@@ -45,9 +45,15 @@ const ClassificationComponent = () => {
         setSubmittedValue(inputValue);
     };
 
+    const handleSetPresetInput = (url: string) => {
+        setInputValue(url);
+    };
+
+
     return (
         <div>
-            <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} />
+            <InputComponent inputValue={inputValue} onInputChange={handleInputChange} onFormSubmit={handleFormSubmit} setPresetInput ={handleSetPresetInput}/>
+
             <ScrappingForReviews submittedValue={submittedValue} returnthing={returnthing} updateReturning={updateReturning}/>
             <ProcessingGenuinity submittedValue={submittedValue} returnthing={returnthing}/>
 

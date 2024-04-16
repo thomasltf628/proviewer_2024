@@ -37,7 +37,7 @@ def index():
     print('hi')
     return ("Hello")
 
-@app.route("/scrap_etsy", methods=["POST"])
+@app.route("/api/scrap_etsy", methods=["POST"])
 def scrapping_etsy():
     data = request.json
     link = data.get('inputs')
@@ -51,21 +51,21 @@ def scrapping_puma():
     result = Puma(link)
     return jsonify(result)
 
-@app.route("/scrap_shein", methods=["POST"])
+@app.route("/api/scrap_shein", methods=["POST"])
 def scrapping_shein():
     data = request.json
     link = data.get('inputs')
     result = SHEIN(link)
     return jsonify(result)
 
-@app.route("/scrap_adidas", methods=["POST"])
+@app.route("/api/scrap_adidas", methods=["POST"])
 def scrapping_adidas():
     data = request.json
     link = data.get('inputs')
     result = Adidas(link)
     return jsonify(result)
 
-@app.route("/scrap_roots", methods=["POST"])
+@app.route("/api/scrap_roots", methods=["POST"])
 @cross_origin()
 def scrapping_roots():
     data = request.json

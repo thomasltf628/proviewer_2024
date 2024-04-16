@@ -74,7 +74,7 @@ def scrapping_roots():
     return jsonify(result)
 
 
-@app.route("/scrap_sportchek", methods=["POST"])
+@app.route("/api/scrap_sportchek", methods=["POST"])
 def scrapping_sportchek():
     data = request.json
     link = data.get('inputs')
@@ -83,14 +83,14 @@ def scrapping_sportchek():
 
 
 
-@app.route("/call_genuinity", methods=["POST"])
+@app.route("/api/call_genuinity", methods=["POST"])
 def calling_genuinity_model():
     data = request.json
     sentence = data.get('text')
     result  = getting_label(sentence)
     return jsonify(result)
 
-@app.route("/call_sentiment", methods=["POST"])
+@app.route("/api/call_sentiment", methods=["POST"])
 def calling_sentiment_model():
     data = request.json
     sentence = data.get('text')

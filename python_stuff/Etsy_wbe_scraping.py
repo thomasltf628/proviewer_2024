@@ -7,11 +7,12 @@ import time
 import csv
 from datetime import datetime
 
+#link = 'https://www.etsy.com/listing/1700218027/womens-cotton-vest-ready-to-ship-summer?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=sc_gallery-1-3&sts=1&plkey=2892b6bee75d27eb9f18f8d3fa2906779abdc89b%3A1700218027'
+
 def Etsy(link):
     no_of_reviews = 0
     review_list =[]
     website = "ETSY"
-    url1 = 'https://www.etsy.com/ca?utm_source=google&utm_medium=cpc&utm_term=etsy%20canada_e&utm_campaign=Search_CA_Brand_GGL_ENG_General-Brand_Core_All_Exact&utm_ag=A1&utm_custom1=_k_CjwKCAjw17qvBhBrEiwA1rU9wwwgcvrtllS7j85Qlj6jDIuOjAy1tkk_jCaxuM8zdMClenqXZfMfmxoC48EQAvD_BwE_k_&utm_content=go_1463443864_59403767200_679371939093_kwd-307732359762_m_&utm_custom2=1463443864&gad_source=1&gbraid=0AAAAADutTMfOwlrKLhdXxc_jUJ9bVeH9c&gclid=CjwKCAjw17qvBhBrEiwA1rU9wwwgcvrtllS7j85Qlj6jDIuOjAy1tkk_jCaxuM8zdMClenqXZfMfmxoC48EQAvD_BwE'
 
     url2 = 'https://www.etsy.com/listing/1700218027/womens-cotton-vest-ready-to-ship-summer?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=&ref=sc_gallery-1-3&sts=1&plkey=2892b6bee75d27eb9f18f8d3fa2906779abdc89b%3A1700218027'
 
@@ -51,6 +52,8 @@ def Etsy(link):
 
     return review_list
 
+#if __name__ == '__main__':
+#    Etsy(link)
 """    review_df = pd.DataFrame(review_list)
     review_df.to_csv(f'{website}.csv', index=False)"""
 

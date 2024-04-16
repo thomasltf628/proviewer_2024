@@ -7,9 +7,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 import time
 
+link = 'https://ca.shein.com/SHEIN-LUNE-Floral-Print-2-In-1-Short-Sleeve-T-Shirt-p-29793312.html?src_identifier=fc%3DWomen%20Clothing%60sc%3DWomen%20Clothing%60tc%3DShop%20by%20category%60oc%3DTops%60ps%3Dtab03navbar03menu01dir04%60jc%3DitemPicking_017175498&src_module=topcat&src_tab_page_id=page_goods_detail1713244365136&mallCode=1&pageListType=2&imgRatio=3-4'
+
 def SHEIN(link):
     review_list =[]
-    url2 = 'https://ca.shein.com/SHEIN-Frenchy-Ditsy-Floral-Print-Knot-Front-Split-Thigh-Dress-p-16375006.html?mallCode=1&imgRatio=3-4'
     chrome_options = webdriver.ChromeOptions()
     user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36"
     chrome_options.add_argument(f'user-agent={user_agent}')
@@ -20,7 +21,7 @@ def SHEIN(link):
 
     # Close the pop up advertisement and puzzle thing
     try:
-        puzzle_element = WebDriverWait(driver, timeout=10).until(
+        puzzle_element = WebDriverWait(driver, timeout=20).until(
             EC.presence_of_element_located((By.CLASS_NAME, "geetest_close")))
         time.sleep(5)
         puzzle_element.click()
@@ -77,7 +78,8 @@ def SHEIN(link):
             break
         return review_list
 
-
+if __name__ == "__main__":
+    SHEIN(link)
 
 """with open('shein_reviews.csv', 'a') as f:
     writer = csv.writer(f)

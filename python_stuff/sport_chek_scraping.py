@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """SPort check scraping"""
-#link = "https://www.sportchek.ca/en/pdp/columbia-women-s-arcadia-ii-hooded-rain-jacket-waterproof-breathable-packable-shell-12545911f.html?loc=plp&&colorCode=COLOUR_BLACK"
+link = "https://www.sportchek.ca/en/pdp/columbia-women-s-arcadia-ii-hooded-rain-jacket-waterproof-breathable-packable-shell-12545911f.html?loc=plp&&colorCode=COLOUR_BLACK"
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -9,6 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import csv
 import time
+
 
 def Sportchek(link):
     
@@ -54,7 +55,8 @@ def Sportchek(link):
         next.click()
     return review_list
 
-
+if __name__ == "__main__":
+    Sportchek(link)
 
 # writing to the csv file
 """with open('sport_check_reviews.csv', 'a') as f:

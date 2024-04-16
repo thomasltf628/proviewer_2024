@@ -7,7 +7,7 @@ from selenium.common.exceptions import *
 import csv
 import time
 
-#https://www.adidas.ca/en/gazelle-shoes/IG6212.html
+#link = 'https://www.adidas.ca/en/gazelle-shoes/IG6212.html'
 
 def Adidas(link):
     url = link
@@ -47,8 +47,8 @@ def Adidas(link):
     
     return review_list
 
-"""if __name__ == "__main__":
-    Adidas(link)"""
+#if __name__ == "__main__":
+#    Adidas(link)
     #username = review_box.find_element(By.CLASS_NAME, 'user-name___2Ra0t').text
     #rating_box = review_box.find_elements(By.CLASS_NAME, 'gl-star-rating__mask')
     #no_of_rating = len([star for star in rating_box if star.get_attribute('style') == 'width: 88%;'])  # get the number of 'colored' stars that depict rating based on the difference in width

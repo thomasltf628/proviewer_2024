@@ -10,6 +10,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 import time
 import csv
 
+#link ='https://ca.puma.com/ca/en/pd/cali-wedge-womens-sneakers/373438?swatch=01&referrer-category=womens-shop-all-womens'
+
 def Puma(link):
     review_list =[]
     chrome_options = webdriver.ChromeOptions()
@@ -75,7 +77,9 @@ def Puma(link):
 
     return review_list
 
-
+#if __name__ == '__main__':
+#    Puma(link)
+    
 
 # write to csv file
 

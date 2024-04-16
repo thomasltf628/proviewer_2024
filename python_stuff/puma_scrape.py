@@ -14,6 +14,7 @@ def Puma(link):
     review_list =[]
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)
+    driver.maximize_window()
     driver.get(link)
 
     # click the button that ask for location

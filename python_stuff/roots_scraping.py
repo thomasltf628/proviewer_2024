@@ -17,6 +17,7 @@ def Roots(link):
 
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)
+    driver.maximize_window()
     driver.get(url)
     time.sleep(3)
 

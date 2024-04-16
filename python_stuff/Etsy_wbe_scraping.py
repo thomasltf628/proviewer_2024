@@ -19,6 +19,7 @@ def Etsy(link):
     PATH = "C:/Program Files (x86)/chromedriver.exe"
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)
+    driver.maximize_window()
     driver.get(link)
     print('gotten')
 

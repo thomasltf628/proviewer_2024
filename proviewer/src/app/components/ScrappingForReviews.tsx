@@ -43,7 +43,7 @@ const ScrappingForReviews: React.FC<ScrappingForReviewsProps> = ({ submittedValu
                 
             try {
                 const website = getBrandFromUrl(submittedValue);
-                const response = await fetch(`http://18.191.233.44/api/scrap_${website}`, {
+                const response = await fetch(`${apiUrl}/scrap_${website}`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

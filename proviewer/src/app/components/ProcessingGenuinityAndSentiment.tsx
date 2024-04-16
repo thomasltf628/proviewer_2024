@@ -32,7 +32,7 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
             {
                 try {
 
-                    const response = await fetch(`/api/call_genuinity`, {
+                    const response = await fetch(`${apiUrl}/call_genuinity`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ const ProcessingGenuinity: React.FC<ProcessingGenuinityProps> = ({ returnthing }
             if (returnthing !== ''){   //Prevent from showing "Submission fail" before anybody gives a fuck
             for (const sentence of returnthing) {
                 try {
-                    const response = await fetch(`http://18.191.233.44/api/call_sentiment`, {
+                    const response = await fetch(`${apiUrl}/call_sentiment`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

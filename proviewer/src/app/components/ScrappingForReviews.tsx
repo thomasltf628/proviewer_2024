@@ -79,10 +79,11 @@ const ScrappingForReviews: React.FC<ScrappingForReviewsProps> = ({ submittedValu
     return (
         <div>
             {submitStatus && <p>{submitStatus}</p>}
-            {returnthing && (submitStatus == 'Scrapped Successfully!') && <p>{returnthing}</p>}
+            
         </div>
     );
 };
 
 export default ScrappingForReviews;
 
+//{returnthing && (submitStatus == 'Scrapped Successfully!') && <p>{returnthing}</p>}

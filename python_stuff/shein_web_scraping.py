@@ -76,7 +76,7 @@ def SHEIN(link):
             print('404 not found')
             print(review_list)   
             break
-        return review_list
+        return review_list  # return the list of comment back to the flask app for further processing
 
 if __name__ == "__main__":
     SHEIN(link)

@@ -1,3 +1,5 @@
+Purpose: scraping the comment on specific product leave by customers
+
 #!/usr/bin/env python3
 """Web scraping Etsy"""
 #https://www.etsy.com/listing/1666024421/womens-linen-vest-linen-vest-cropped?ref=listing_page_ad_row-3&sts=1&plkey=9871ca7799275aa94fdf1eda173f6e54ee022fc1%3A1666024421&listing_id=1666024421&listing_slug=womens-linen-vest-linen-vest-cropped
@@ -20,8 +22,8 @@ def Etsy(link):
     PATH = "C:/Program Files (x86)/chromedriver.exe"
     chrome_options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(options=chrome_options)
-    driver.maximize_window()
-    driver.get(link)
+    driver.maximize_window() # Some elements are not detected unless window maximized
+    driver.get(link) # For project demonstration purpose, the scraping target are switched between url, url2 and link
     print('gotten')
 
     review_to_scrap = 8
@@ -40,17 +42,17 @@ def Etsy(link):
     while no_of_reviews < review_to_scrap:
         nav = driver.find_elements(By.XPATH, '//nav[@aria-label="Pagination"]')
         nav = nav[0]
-        ul = nav.find_elements(By.XPATH, './*')
+        ul = nav.find_elements(By.XPATH, './*') # Locate the page list
         ul = ul[0]
-        buttons = ul.find_elements(By.XPATH, './*')
+        buttons = ul.find_elements(By.XPATH, './*') # Locate the buttons
         next = buttons[-1]
         get_reviews()
         no_of_reviews += 1
-        next.click()
+        next.click() # Click the button with click() method to navigate to next page 
         time.sleep(2)
         
 
-    return review_list
+    return review_list # return the whole list of comment back to the flask app for further processing
 
 #if __name__ == '__main__':
 #    Etsy(link)

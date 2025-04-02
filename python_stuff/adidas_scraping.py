@@ -1,3 +1,5 @@
+# Purpose: Scrap the comments leave by customers on specific product
+
 #!/usr/bin/python3
 """Scraping Nike stores"""
 
@@ -20,7 +22,7 @@ def Adidas(link):
     driver.execute_script("window.scrollTo(0,800);")
 
     show_reviews = driver.find_element(By.CSS_SELECTOR, '#navigation-target-reviews > div:nth-child(1) > button:nth-child(1)')
-    show_reviews.click()
+    show_reviews.click() # Open the comment section by clicking it out as it is an interactive element
 
     more_reviews = driver.find_element(By.CSS_SELECTOR, 'button.gl-cta--secondary:nth-child(1)')
 
@@ -45,7 +47,7 @@ def Adidas(link):
         review_list.append(review)
     print(review_list)    
     
-    return review_list
+    return review_list # Return the whole list of comment back to flask app for further processing
 
 #if __name__ == "__main__":
 #    Adidas(link)

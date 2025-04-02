@@ -1,3 +1,5 @@
+# Purpose: Scrap the comment in the customer section of the products
+
 #!/usr/bin/python3
 """SPort check scraping"""
 link = "https://www.sportchek.ca/en/pdp/columbia-women-s-arcadia-ii-hooded-rain-jacket-waterproof-breathable-packable-shell-12545911f.html?loc=plp&&colorCode=COLOUR_BLACK"
@@ -27,6 +29,7 @@ def Sportchek(link):
     driver.execute_script("window.scrollTo(0, 4000);")
 
     review_list = []
+    # Scrap the first 15 comments
     no_of_reviews = 0
     while no_of_reviews < 15:
         reviews_container = WebDriverWait(driver, timeout=10).until(
@@ -43,7 +46,7 @@ def Sportchek(link):
 
             except:
                 try:
-                    # You can locate the button by its ID
+                    # Click away the pop-up window asking for feedback9
                     button = driver.find_element(By.ID, 'kplDeferButton')
                     button.click()
                     print("Button clicked successfully.")
@@ -53,7 +56,7 @@ def Sportchek(link):
                 continue
         next = driver.find_element(By.CLASS_NAME, 'next')
         next.click()
-    return review_list
+    return review_list # return the list of comment back to the flask app for further processing
 
 if __name__ == "__main__":
     Sportchek(link)

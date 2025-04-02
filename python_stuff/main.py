@@ -9,7 +9,7 @@ from selenium.common.exceptions import NoSuchElementException
 
 from Etsy_wbe_scraping import Etsy
 from puma_scrape import Puma
-from shein_web_scraoing import SHEIN
+from shein_web_scraping import SHEIN
 from adidas_scraping import Adidas
 from roots_scraping import Roots
 from sport_chek_scraping import Sportchek
